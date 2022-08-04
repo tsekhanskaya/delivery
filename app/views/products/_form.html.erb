@@ -1,0 +1,77 @@
+<%= form_with(model: product) do |form| %>
+  <% if product.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :category_id, style: "display: block" %>
+    <%= form.number_field :category_id %>
+  </div>
+
+  <div>
+    <%= form.label :brand_id, style: "display: block" %>
+    <%= form.number_field :brand_id %>
+  </div>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :bytitle, style: "display: block" %>
+    <%= form.text_field :bytitle %>
+  </div>
+
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div>
+    <%= form.label :price, style: "display: block" %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div>
+    <%= form.label :old_price, style: "display: block" %>
+    <%= form.text_field :old_price %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.number_field :status %>
+  </div>
+
+  <div>
+    <%= form.label :keywords, style: "display: block" %>
+    <%= form.text_field :keywords %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label :img, style: "display: block" %>
+    <%= form.text_field :img %>
+  </div>
+
+  <div>
+    <%= form.label :hit, style: "display: block" %>
+    <%= form.number_field :hit %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

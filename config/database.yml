@@ -19,3 +19,5 @@ production:
   database: delivery_production
   username: postgres
   password: <%= ENV["DELIVERY_DATABASE_PASSWORD"] %>
+
+
