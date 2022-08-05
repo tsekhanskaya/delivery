@@ -1,14 +1,38 @@
-<p style="color: green"><%= notice %></p>
+  <p style="color: green"><%= notice %></p>
 
-<h1>Products</h1>
 
-<div id="products">
-  <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
-  <% end %>
-</div>
+    <h1>Products</h1>
 
-<%= link_to "New product", new_product_path %>
+    <div class="bd-table" >
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">Id:</th>
+          <th scope="col">Category:</th>
+          <th scope="col">Brand:</th>
+          <th scope="col">Title:</th>
+          <th scope="col">Bytitle:</th>
+          <th scope="col">Content:</th>
+          <th scope="col">Price:</th>
+          <th scope="col">Old price:</th>
+          <th scope="col">Keywords:</th>
+          <th scope="col">Description:</th>
+          <th scope="col">Picture:</th>
+
+        </tr>
+        </thead>
+        <tbody>
+          <div id="products">
+            <% @products.each do |product| %>
+
+              <%= render product %>
+
+            <% end %>
+          </div>
+        </tbody>
+      </table>
+    </div>
+
+    <%= link_to "New product", new_product_path %>
+
+</body>

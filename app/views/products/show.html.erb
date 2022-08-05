@@ -1,10 +1,33 @@
+<%=  %>
 <p style="color: green"><%= notice %></p>
 
-<%= render @product %>
+<div class="bd-table" >
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Id:</th>
+      <th scope="col">Category:</th>
+      <th scope="col">Brand:</th>
+      <th scope="col">Title:</th>
+      <th scope="col">Bytitle:</th>
+      <th scope="col">Content:</th>
+      <th scope="col">Price:</th>
+      <th scope="col">Old price:</th>
+      <th scope="col">Keywords:</th>
+      <th scope="col">Description:</th>
+      <th scope="col">Picture:</th>
+
+    </tr>
+    </thead>
+    <tbody>
+      <%= render @product %>
+    </tbody>
+  </table>
+</div>
+
 
 <div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
-  <%= link_to "Back to products", products_path %>
-
-  <%= button_to "Destroy this product", @product, method: :delete %>
+  <%= link_to "Изменить этот продукт", edit_product_path(@product) %> |
+  <%= link_to "Вернуться к продуктам", products_path %>
+  <%= button_to "Удалить этот продукт", @product, method: :delete %>
 </div>

@@ -1,62 +1,15 @@
-<div id="<%= dom_id product %>">
-  <p>
-    <strong>Category:</strong>
-    <%= product.category_id %>
-  </p>
+<tr>
+  <th scope="row"><%= product.id %></th>
+  <td><%= product.category_id %></td>
+  <td><%= product.brand_id %></td>
+  <td><%= product.title %></td>
+  <td><%= product.bytitle %></td>
+  <td><%= product.content %></td>
+  <td><%= product.price %></td>
+  <td><%= product.old_price %></td>
+  <td><%= product.keywords %></td>
+  <td><%= product.description %></td>
+  <td><%= product.img %></td>
+  <td><%= link_to "Show this product", product %></td>
+</tr>
 
-  <p>
-    <strong>Brand:</strong>
-    <%= product.brand_id %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= product.title %>
-  </p>
-
-  <p>
-    <strong>Bytitle:</strong>
-    <%= product.bytitle %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <%= product.content %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= product.price %>
-  </p>
-
-  <p>
-    <strong>Old price:</strong>
-    <%= product.old_price %>
-  </p>
-
-  <p>
-    <strong>Status:</strong>
-    <%= product.status %>
-  </p>
-
-  <p>
-    <strong>Keywords:</strong>
-    <%= product.keywords %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= product.description %>
-  </p>
-
-  <p>
-    <strong>Img:</strong>
-    <%= product.img %>
-  </p>
-
-  <p>
-    <strong>Hit:</strong>
-    <%= product.hit %>
-  </p>
-
-</div>
