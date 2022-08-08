@@ -1,0 +1,47 @@
+<%= form_with(model: brand) do |form| %>
+  <% if brand.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
+
+      <ul>
+        <% brand.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :bytitle, style: "display: block" %>
+    <%= form.text_field :bytitle %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label :img, style: "display: block" %>
+    <%= form.text_field :img %>
+  </div>
+
+  <div>
+    <%= form.label :link, style: "display: block" %>
+    <%= form.text_field :link %>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
