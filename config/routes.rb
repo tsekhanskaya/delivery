@@ -2,11 +2,19 @@
 
 Rails.application.routes.draw do
   devise_for :users
+
+  # devise_for :users do
+  #   get '/users/sign_out' => 'devise/sessions#destroy'
+  #   get 'sign_in', to: 'devise/sessions#new'
+  # end
   get 'persons/profile'
   resources :brands
   resources :products
 
-  get 'persons/profile', as: 'user_root'
+  root to: 'products#index'
+
+  # get 'persons/profile', as: 'user_root'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

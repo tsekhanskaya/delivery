@@ -1,18 +1,18 @@
 require 'rails_helper'
 
-RSpec.describe "brands/show", type: :view do
+RSpec.describe 'brands/show', type: :view do
   before(:each) do
     @brand = assign(:brand, Brand.create!(
-      title: "Title",
-      bytitle: "Bytitle",
-      description: "Description",
-      img: "Img",
-      link: "Link",
-      address: "Address"
-    ))
+                              title: 'Title',
+                              bytitle: 'Bytitle',
+                              description: 'Description',
+                              img: 'Img',
+                              link: 'Link',
+                              address: 'Address'
+                            ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Title/)
     expect(rendered).to match(/Bytitle/)
