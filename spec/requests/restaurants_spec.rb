@@ -14,9 +14,9 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe '/brands', type: :request do
+RSpec.describe '/restaurants', type: :request do
   # This should return the minimal set of attributes required to create a valid
-  # Brand. As you add validations to Brand, be sure to
+  # Restaurant. As you add validations to Restaurant, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
     skip('Add a hash of attributes valid for your model')
@@ -28,58 +28,58 @@ RSpec.describe '/brands', type: :request do
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      Brand.create! valid_attributes
-      get brands_url
+      Restaurant.create! valid_attributes
+      get restaurants_url
       expect(response).to be_successful
     end
   end
 
   describe 'GET /show' do
     it 'renders a successful response' do
-      brand = Brand.create! valid_attributes
-      get brand_url(brand)
+      restaurant = Restaurant.create! valid_attributes
+      get restaurant_url(restaurant)
       expect(response).to be_successful
     end
   end
 
   describe 'GET /new' do
     it 'renders a successful response' do
-      get new_brand_url
+      get new_restaurant_url
       expect(response).to be_successful
     end
   end
 
   describe 'GET /edit' do
     it 'renders a successful response' do
-      brand = Brand.create! valid_attributes
-      get edit_brand_url(brand)
+      restaurant = Restaurant.create! valid_attributes
+      get edit_restaurant_url(restaurant)
       expect(response).to be_successful
     end
   end
 
   describe 'POST /create' do
     context 'with valid parameters' do
-      it 'creates a new Brand' do
+      it 'creates a new Restaurant' do
         expect do
-          post brands_url, params: { brand: valid_attributes }
-        end.to change(Brand, :count).by(1)
+          post restaurants_url, params: { restaurant: valid_attributes }
+        end.to change(Restaurant, :count).by(1)
       end
 
-      it 'redirects to the created brand' do
-        post brands_url, params: { brand: valid_attributes }
-        expect(response).to redirect_to(brand_url(Brand.last))
+      it 'redirects to the created restaurant' do
+        post restaurants_url, params: { restaurant: valid_attributes }
+        expect(response).to redirect_to(restaurant_url(Restaurant.last))
       end
     end
 
     context 'with invalid parameters' do
-      it 'does not create a new Brand' do
+      it 'does not create a new Restaurant' do
         expect do
-          post brands_url, params: { brand: invalid_attributes }
-        end.to change(Brand, :count).by(0)
+          post restaurants_url, params: { restaurant: invalid_attributes }
+        end.to change(Restaurant, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post brands_url, params: { brand: invalid_attributes }
+        post restaurants_url, params: { restaurant: invalid_attributes }
         expect(response).to be_successful
       end
     end
@@ -91,42 +91,42 @@ RSpec.describe '/brands', type: :request do
         skip('Add a hash of attributes valid for your model')
       end
 
-      it 'updates the requested brand' do
-        brand = Brand.create! valid_attributes
-        patch brand_url(brand), params: { brand: new_attributes }
-        brand.reload
+      it 'updates the requested restaurant' do
+        restaurant = Restaurant.create! valid_attributes
+        patch restaurant_url(restaurant), params: { restaurant: new_attributes }
+        restaurant.reload
         skip('Add assertions for updated state')
       end
 
-      it 'redirects to the brand' do
-        brand = Brand.create! valid_attributes
-        patch brand_url(brand), params: { brand: new_attributes }
-        brand.reload
-        expect(response).to redirect_to(brand_url(brand))
+      it 'redirects to the restaurant' do
+        restaurant = Restaurant.create! valid_attributes
+        patch restaurant_url(restaurant), params: { restaurant: new_attributes }
+        restaurant.reload
+        expect(response).to redirect_to(restaurant_url(restaurant))
       end
     end
 
     context 'with invalid parameters' do
       it "renders a successful response (i.e. to display the 'edit' template)" do
-        brand = Brand.create! valid_attributes
-        patch brand_url(brand), params: { brand: invalid_attributes }
+        restaurant = Restaurant.create! valid_attributes
+        patch restaurant_url(restaurant), params: { restaurant: invalid_attributes }
         expect(response).to be_successful
       end
     end
   end
 
   describe 'DELETE /destroy' do
-    it 'destroys the requested brand' do
-      brand = Brand.create! valid_attributes
+    it 'destroys the requested restaurant' do
+      restaurant = Restaurant.create! valid_attributes
       expect do
-        delete brand_url(brand)
-      end.to change(Brand, :count).by(-1)
+        delete restaurant_url(restaurant)
+      end.to change(Restaurant, :count).by(-1)
     end
 
-    it 'redirects to the brands list' do
-      brand = Brand.create! valid_attributes
-      delete brand_url(brand)
-      expect(response).to redirect_to(brands_url)
+    it 'redirects to the restaurants list' do
+      restaurant = Restaurant.create! valid_attributes
+      delete restaurant_url(restaurant)
+      expect(response).to redirect_to(restaurants_url)
     end
   end
 end

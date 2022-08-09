@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :restaurants
   devise_for :users
 
   devise_scope :user do
@@ -11,7 +12,6 @@ Rails.application.routes.draw do
   #   get '/users/sign_out' => 'devise/sessions#destroy'
   #   get 'sign_in', to: 'devise/sessions#new'
   # end
-
 
   get 'persons/profile'
   resources :brands
