@@ -1,10 +1,12 @@
-<h1>Editing product</h1>
+<div class="mx-auto" style="width: 300px;">
+  <h1>Editing product</h1>
 
-<%= render "form", product: @product %>
+  <%= render "form", product: @product %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Show this product", @product %> |
-  <%= link_to "Back to products", products_path %>
+  <div>
+    <%= link_to "Посмотреть этот продукт", @product %> |
+    <%= link_to "Вернуться ко всем продуктам", products_path %>
+  </div>
 </div>

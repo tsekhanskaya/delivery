@@ -21,7 +21,7 @@
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em><%= минимум @minimum_password_length %> символов</em>
     <% end %>
   </div>
     <br />
@@ -35,8 +35,8 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
     <br />
-    <%= f.submit "Update", :class =>'btn btn-outline-success'%>
-    <%= button_to "Delete", registration_path(resource_name), data: { confirm: 'Are you sure?' }, method: :delete, :class =>'btn btn-outline-danger' %>
+    <%= f.submit "Обновить", :class =>'btn btn-outline-success'%>
+    <%= button_to "Удалить", registration_path(resource_name), data: { confirm: 'Вы уверены?' }, method: :delete, :class =>'btn btn-outline-danger' %>
 <% end %>
 
 <%= link_to "Вернуться", :back %>
