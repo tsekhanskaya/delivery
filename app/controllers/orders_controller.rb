@@ -20,18 +20,31 @@ class OrdersController < ApplicationController
   def edit; end
 
   # POST /orders or /orders.json
+  # def create
+  #   @order = Order.new(order_params)
+  #
+  #   respond_to do |format|
+  #     if @order.save
+  #       format.html { redirect_to order_url(@order), notice: 'Order was successfully created.' }
+  #       format.json { render :show, status: :created, location: @order }
+  #     else
+  #       format.html { render :new, status: :unprocessable_entity }
+  #       format.json { render json: @order.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
+  # POST /orders
   def create
     @order = Order.new(order_params)
-
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to order_url(@order), notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
+    @current_cart.line_items.each do |item|
+      @order.line_items << item
+      item.cart_id = nil
     end
+    @order.save
+    Cart.destroy(session[:cart_id])
+    session[:cart_id] = nil
+    redirect_to order_url(@order)
   end
 
   # PATCH/PUT /orders/1 or /orders/1.json
