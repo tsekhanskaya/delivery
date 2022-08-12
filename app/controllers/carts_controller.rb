@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# CartsController used to store Product LineItems before proceeding to new Order checkout
 class CartsController < ApplicationController
   def show
     @cart = @current_cart
