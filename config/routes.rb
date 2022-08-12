@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'carts/show'
   resources :orders
   resources :restaurants
   devise_for :users
