@@ -2,8 +2,7 @@
   <th scope="row"><%= product.id %></th>
   <td><%= product.category_id %></td>
   <td><%= Brand.find(product.brand_id).title %></td>
-<!--  <td><%#= product.brand_id %></td>-->
-  <td><%= product.title %></td>
+  <td><%= link_to "#{product.title}", product %></td>
   <td><%= product.bytitle %></td>
   <td><%= product.content %></td>
   <td><%= product.price %></td>
@@ -11,6 +10,6 @@
   <td><%= product.keywords %></td>
   <td><%= product.description %></td>
   <td><%= product.img %></td>
-  <td><%= link_to "Show this product", product %></td>
+  <td><%= button_to "Add to cart", line_items_path(:product_id => product.id) %></td>
 </tr>
 
