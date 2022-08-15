@@ -31,7 +31,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'pry-rails'
+  # gem 'pry-rails'
   gem 'rubocop', require: false
   gem 'spring'
   gem 'spring-watcher-listen'
