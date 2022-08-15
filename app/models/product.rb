@@ -4,5 +4,4 @@ class Product < ApplicationRecord
   belongs_to :brand
   has_many :orders
   has_many :restaurants, through: :orders
-  has_many :line_items, dependent: :destroy
 end

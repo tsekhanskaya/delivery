@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# controller class that is responsible for actions performed with the product
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
