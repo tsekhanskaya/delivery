@@ -8,6 +8,7 @@ ruby '3.0.3'
 gem 'bootsnap', require: false
 gem 'bootstrap'
 # gem 'bootstrap-sass'
+gem 'cancan'
 gem 'deleted_at'
 gem 'devise'
 gem 'faker'
